@@ -9,9 +9,11 @@
 <ion-content>
   <ion-grid>
     <ion-row>
-      <ion-col size="6" *ngFor="let photo of photoService.photos; index as position">
-        <ion-img [src]="photo.webviewPath"></ion-img>
-      </ion-col>
+      @for (photo of photoService.photos; track $index; let position = $index) {
+        <ion-col size="6">
+          <ion-img [src]="photo.webviewPath"></ion-img>
+        </ion-col>
+      }      
     </ion-row>
   </ion-grid>
 
