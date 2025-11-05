@@ -11,6 +11,9 @@ import { PhotoService } from '../services/photo.service';
   imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonIcon, IonFabButton, IonFab, IonGrid, IonRow, IonCol, IonImg]
 })
 export class Tab2Page {
+  async ngOnInit() {
+    await this.photoService.loadSaved();
+  }
 
   constructor(public photoService: PhotoService) {
     addIcons({ camera })
